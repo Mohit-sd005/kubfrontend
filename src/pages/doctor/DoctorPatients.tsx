@@ -14,7 +14,7 @@ const DoctorPatients: React.FC = () => {
   useEffect(() => {
     const fetchPatients = async () => {
       try {
-        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/users/patients`);
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/users/patients`);
         if (response.ok) {
           const data = await response.json();
           setPatients(data);

@@ -133,7 +133,7 @@ class Api {
 
   // 🩺 Doctors (new)
 async getDoctors() {
-  return this.request('/api/users?role=DOCTOR');  // <-- include /api
+  return this.request('/users?role=DOCTOR');
 }
 
 

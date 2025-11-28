@@ -15,7 +15,7 @@ const DoctorAppointments: React.FC = () => {
   useEffect(() => {
     const fetchAppointments = async () => {
       try {
-        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/appointments`);
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/appointments`);
         if (response.ok) {
           const data = await response.json();
           setAppointments(data);

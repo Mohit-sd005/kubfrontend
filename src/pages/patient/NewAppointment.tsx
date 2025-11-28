@@ -18,7 +18,7 @@ export default function NewAppointment() {
     e.preventDefault();
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/appointments`, {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/appointments`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ date, time, disease, remarks }),
