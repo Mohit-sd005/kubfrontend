@@ -45,7 +45,7 @@ export default function NewRecord() {
     setLoading(true);
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/records`, {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/records`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),

@@ -14,7 +14,7 @@ const AdminUsers: React.FC = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/users`);
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/users`);
         if (response.ok) {
           const data = await response.json();
           setUsers(data);

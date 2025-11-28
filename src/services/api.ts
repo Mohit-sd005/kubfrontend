@@ -74,25 +74,25 @@ class Api {
 
   // 📅 Appointments
   async getAppointments(): Promise<any[]> {
-    return this.request("/appointments");
+    return this.request("/api/appointments");
   }
 
   async createAppointment(appointmentData: any) {
-    return this.request("/appointments", {
+    return this.request("/api/appointments", {
       method: "POST",
       body: JSON.stringify(appointmentData),
     });
   }
 
   async updateAppointment(id: string, updateData: any) {
-    return this.request(`/appointments/${id}`, {
+    return this.request(`/api/appointments/${id}`, {
       method: "PUT",
       body: JSON.stringify(updateData),
     });
   }
 
   async deleteAppointment(id: string) {
-    return this.request(`/appointments/${id}`, {
+    return this.request(`/api/appointments/${id}`, {
       method: "DELETE",
     });
   }
@@ -100,20 +100,20 @@ class Api {
   // 🩺 Medical Records
   async getMedicalRecords(patientId?: string) {
     const endpoint = patientId
-      ? `/medical-records?patientId=${patientId}`
-      : "/medical-records";
+      ? `/api/records?patientId=${patientId}`
+      : "/api/records";
     return this.request(endpoint);
   }
 
   async createMedicalRecord(recordData: any) {
-    return this.request("/medical-records", {
+    return this.request("/api/records", {
       method: "POST",
       body: JSON.stringify(recordData),
     });
   }
 
   async updateMedicalRecord(id: string, updateData: any) {
-    return this.request(`/medical-records/${id}`, {
+    return this.request(`/api/records/${id}`, {
       method: "PUT",
       body: JSON.stringify(updateData),
     });
@@ -121,25 +121,25 @@ class Api {
 
   // 👤 Users
   async getUsers(role?: string) {
-    const endpoint = role ? `/users?role=${role}` : "/users";
+    const endpoint = role ? `/api/users?role=${role}` : "/api/users";
     return this.request(endpoint);
   }
 
   async deleteUser(id: string) {
-    return this.request(`/users/${id}`, {
+    return this.request(`/api/users/${id}`, {
       method: "DELETE",
     });
   }
 
   // 🩺 Doctors (new)
-async getDoctors() {
-  return this.request('/users?role=DOCTOR');
-}
+  async getDoctors() {
+    return this.request('/api/doctors');
+  }
 
 
   // 📊 Dashboard Stats
   async getDashboardStats(): Promise<DashboardData> {
-    return this.request<DashboardData>("/dashboard/stats");
+    return this.request<DashboardData>("/api/dashboard/stats");
   }
 }
 

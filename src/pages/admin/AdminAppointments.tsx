@@ -16,7 +16,7 @@ const AdminAppointments: React.FC = () => {
   useEffect(() => {
     const fetchAppointments = async () => {
       try {
-        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/appointments`);
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/appointments`);
         if (!response.ok) {
           throw new Error("Failed to fetch appointments");
         }

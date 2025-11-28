@@ -19,7 +19,7 @@ export default function AdminRecords() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_BACKEND_URL}/records`)
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/api/records`)
       .then((res) => res.json())
       .then((data) => {
         setRecords(data);
